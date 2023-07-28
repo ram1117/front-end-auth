@@ -32,6 +32,28 @@
   color: red;
 }
 
+.dashboard {
+  margin: 1rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-header > button {
+  padding: 1rem;
+}
+
+.dashboard-data-list{
+  list-style: none;
+}
+
+.data-item{
+  padding: 1rem 0;
+  text-align: left;
+}
+
 @media screen and (min-width: 768px) {
   .App {
     text-align: center;

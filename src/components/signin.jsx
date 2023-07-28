@@ -1,21 +1,23 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Authentication from '../services/authentication.service';
 import Messages from './messages';
 
 const Signin = () => {
   const [loginCredentials, setLoginCredentials] = useState({});
+  const navigate = useNavigate();
   const [message, setMessage] = useState({
     success: '',
     error: '',
   });
 
-  const handleLogin = (e) => {
+  const handleLogin = async (e) => {
     e.preventDefault();
-    setMessage({
-      ...message,
-      success: 'Succesfully signed in',
-      error: 'error message',
-    });
+    const responseMessage = await Authentication.login(loginCredentials);
+    setMessage(responseMessage);
+    if (Authentication.isLoggedin()) {
+      navigate('dashboard');
+    }
   };
 
   const handleInputChange = (e) => {

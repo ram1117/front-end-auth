@@ -1,21 +1,27 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import Authentication from '../services/authentication.service';
 import Messages from './messages';
 
 const Signup = () => {
   const [userData, setUserData] = useState({});
+  const navigate = useNavigate();
   const [message, setMessage] = useState({
     success: '',
     error: '',
   });
 
-  const handleSignup = (e) => {
+  const handleSignup = async (e) => {
     e.preventDefault();
     if (userData.password !== userData.password1) {
       setMessage({
         ...message,
-        error: 'Passwords don\'t match. Please try again',
+        error: "Passwords don't match. Please try again",
       });
+    } else {
+      const responseMessage = await Authentication.signup(userData);
+      setMessage(responseMessage);
+      navigate('/');
     }
   };
 

@@ -7,7 +7,7 @@ Front-end authentication exercise implemented using ReactJS
 React project with front-end authentication using JWT access token and React Router. 
 
 ## Live Demo
-A live demo is hosted on [Github pages]()
+A live demo is hosted on [Github pages](https://dashboard-auth.onrender.com)
 
 ## Getting Started
 

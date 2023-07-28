@@ -1,6 +1,71 @@
 .App {
   text-align: center;
-  border: solid 1px red;
-  margin: 2rem;
+  margin: 1rem;
   height: 85vh;
+}
+
+.form-inputs-wrapper {
+  width: 80%;
+  display: flex;
+  margin: 1rem auto;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.form-inputs-wrapper > input,
+.form-inputs-wrapper > button {
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.success-messages,
+.error-message {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.success-message {
+  color: green;
+}
+
+.error-message {
+  color: red;
+}
+
+.dashboard {
+  margin: 1rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dashboard-header > button {
+  padding: 1rem;
+}
+
+.dashboard-data-list {
+  list-style: none;
+}
+
+.data-item {
+  padding: 1rem 0;
+  text-align: left;
+}
+
+@media screen and (min-width: 768px) {
+  .App {
+    text-align: center;
+    margin: 2rem;
+    height: 85vh;
+  }
+
+  .form-inputs-wrapper {
+    width: 50%;
+    display: flex;
+    margin: 5rem auto;
+    flex-direction: column;
+    justify-content: center;
+  }
 }

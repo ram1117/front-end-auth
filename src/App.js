@@ -2,6 +2,7 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Dashboard from './components/dashboard';
 import Signin from './components/signin';
 import Signup from './components/signup';
+import Protected from './components/protected';
 import './App.css';
 
 function App() {
@@ -15,7 +16,9 @@ function App() {
           <Routes>
             <Route index element={<Signin />} />
             <Route path="signup" element={<Signup />} />
-            <Route path="dashboard" element={<Dashboard />} />
+            <Route element={<Protected />}>
+              <Route path="dashboard" element={<Dashboard />} />
+            </Route>
           </Routes>
         </BrowserRouter>
       </div>
